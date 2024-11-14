@@ -27,11 +27,11 @@ const projects = [
 
 const tools = [
   {
-    title: "AI Model Evaluator",
-    description: "Open-source tool for assessing bias in machine learning models",
+    title: "Whisper Transcriber",
+    description: "Transcribes audio files into text using OpenAI's Whisper API with multiple language support",
     image: "https://images.unsplash.com/photo-1555949963-aa79dcee981c?auto=format&fit=crop&q=80",
-    tags: ["Python", "AI", "Open Source"],
-    link: "#"
+    tags: ["Python", "AI", "OpenAI"],
+    link: "https://speech-to-text-free.replit.app"
   },
   {
     title: "STEM Career Navigator",
