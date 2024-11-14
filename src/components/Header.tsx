@@ -16,6 +16,7 @@ export default function Header() {
           <div className="hidden md:flex items-center space-x-8">
             <a href="#projects" className="text-gray-900 hover:text-primary-600 transition-colors">Projects</a>
             <a href="#about" className="text-gray-900 hover:text-primary-600 transition-colors">About</a>
+            <a href="#community" className="text-gray-900 hover:text-primary-600 transition-colors">Community</a>
             <a href="#contact" className="text-gray-900 hover:text-primary-600 transition-colors">Contact</a>
             <div className="flex items-center space-x-4">
               <a href="https://github.com" target="_blank" rel="noopener noreferrer" className="text-gray-900 hover:text-primary-600 transition-colors">
@@ -42,6 +43,7 @@ export default function Header() {
             <div className="flex flex-col space-y-4 px-6 py-4">
               <a href="#projects" className="text-gray-900 hover:text-primary-600 transition-colors" onClick={() => setIsOpen(false)}>Projects</a>
               <a href="#about" className="text-gray-900 hover:text-primary-600 transition-colors" onClick={() => setIsOpen(false)}>About</a>
+              <a href="#community" className="text-gray-900 hover:text-primary-600 transition-colors" onClick={() => setIsOpen(false)}>Community</a>
               <a href="#contact" className="text-gray-900 hover:text-primary-600 transition-colors" onClick={() => setIsOpen(false)}>Contact</a>
               <div className="flex items-center space-x-4 pt-2">
                 <a href="https://github.com" target="_blank" rel="noopener noreferrer" className="text-gray-900 hover:text-primary-600 transition-colors">
