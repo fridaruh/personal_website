@@ -4,6 +4,15 @@ import { Menu, X, Github, Linkedin, Twitter } from 'lucide-react';
 export default function Header() {
   const [isOpen, setIsOpen] = React.useState(false);
 
+  const navItems = [
+    { href: "#tools", label: "Tools" },
+    { href: "#student-projects", label: "Student Projects" },
+    { href: "#projects", label: "Projects" },
+    { href: "#about", label: "About" },
+    { href: "#community", label: "Community" },
+    { href: "#contact", label: "Contact" },
+  ];
+
   return (
     <header className="fixed w-full bg-white/80 backdrop-blur-md z-50">
       <nav className="container mx-auto px-6 py-4">
@@ -14,18 +23,23 @@ export default function Header() {
           
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-8">
-            <a href="#projects" className="text-gray-900 hover:text-primary-600 transition-colors">Projects</a>
-            <a href="#about" className="text-gray-900 hover:text-primary-600 transition-colors">About</a>
-            <a href="#community" className="text-gray-900 hover:text-primary-600 transition-colors">Community</a>
-            <a href="#contact" className="text-gray-900 hover:text-primary-600 transition-colors">Contact</a>
+            {navItems.map((item) => (
+              <a 
+                key={item.href}
+                href={item.href} 
+                className="text-gray-900 hover:text-primary-600 transition-colors"
+              >
+                {item.label}
+              </a>
+            ))}
             <div className="flex items-center space-x-4">
-              <a href="https://github.com" target="_blank" rel="noopener noreferrer" className="text-gray-900 hover:text-primary-600 transition-colors">
+              <a href="https://github.com/fridaruh" target="_blank" rel="noopener noreferrer" className="text-gray-900 hover:text-primary-600 transition-colors">
                 <Github className="w-5 h-5" />
               </a>
-              <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="text-gray-900 hover:text-primary-600 transition-colors">
+              <a href="https://linkedin.com/in/fridaruh" target="_blank" rel="noopener noreferrer" className="text-gray-900 hover:text-primary-600 transition-colors">
                 <Linkedin className="w-5 h-5" />
               </a>
-              <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className="text-gray-900 hover:text-primary-600 transition-colors">
+              <a href="https://twitter.com/fridaruh" target="_blank" rel="noopener noreferrer" className="text-gray-900 hover:text-primary-600 transition-colors">
                 <Twitter className="w-5 h-5" />
               </a>
             </div>
@@ -41,18 +55,24 @@ export default function Header() {
         {isOpen && (
           <div className="md:hidden absolute top-full left-0 right-0 bg-white border-t shadow-lg">
             <div className="flex flex-col space-y-4 px-6 py-4">
-              <a href="#projects" className="text-gray-900 hover:text-primary-600 transition-colors" onClick={() => setIsOpen(false)}>Projects</a>
-              <a href="#about" className="text-gray-900 hover:text-primary-600 transition-colors" onClick={() => setIsOpen(false)}>About</a>
-              <a href="#community" className="text-gray-900 hover:text-primary-600 transition-colors" onClick={() => setIsOpen(false)}>Community</a>
-              <a href="#contact" className="text-gray-900 hover:text-primary-600 transition-colors" onClick={() => setIsOpen(false)}>Contact</a>
+              {navItems.map((item) => (
+                <a 
+                  key={item.href}
+                  href={item.href} 
+                  className="text-gray-900 hover:text-primary-600 transition-colors"
+                  onClick={() => setIsOpen(false)}
+                >
+                  {item.label}
+                </a>
+              ))}
               <div className="flex items-center space-x-4 pt-2">
-                <a href="https://github.com" target="_blank" rel="noopener noreferrer" className="text-gray-900 hover:text-primary-600 transition-colors">
+                <a href="https://github.com/fridaruh" target="_blank" rel="noopener noreferrer" className="text-gray-900 hover:text-primary-600 transition-colors">
                   <Github className="w-5 h-5" />
                 </a>
-                <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="text-gray-900 hover:text-primary-600 transition-colors">
+                <a href="https://linkedin.com/in/fridaruh" target="_blank" rel="noopener noreferrer" className="text-gray-900 hover:text-primary-600 transition-colors">
                   <Linkedin className="w-5 h-5" />
                 </a>
-                <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className="text-gray-900 hover:text-primary-600 transition-colors">
+                <a href="https://twitter.com/fridaruh" target="_blank" rel="noopener noreferrer" className="text-gray-900 hover:text-primary-600 transition-colors">
                   <Twitter className="w-5 h-5" />
                 </a>
               </div>
