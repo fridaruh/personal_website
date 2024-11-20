@@ -7,9 +7,9 @@ export default function Header() {
   const navItems = [
     { href: "#tools", label: "Tools" },
     { href: "#student-projects", label: "Student Projects" },
-    { href: "#projects", label: "Projects" },
     { href: "#about", label: "About" },
     { href: "#community", label: "Community" },
+    { href: "#testimonials", label: "Testimonials" },
     { href: "#contact", label: "Contact" },
   ];
 
