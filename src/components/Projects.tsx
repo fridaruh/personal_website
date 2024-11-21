@@ -1,5 +1,6 @@
 import React from 'react';
-import { ExternalLink, ChevronLeft, ChevronRight } from 'lucide-react';
+import { ExternalLink } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 const tools = [
   {
@@ -10,41 +11,17 @@ const tools = [
     link: "#"
   },
   {
-    title: "STEM Career Navigator",
-    description: "Interactive platform helping women explore and plan STEM career paths",
-    image: "https://images.unsplash.com/photo-1573164713714-d95e436ab8d6?auto=format&fit=crop&q=80",
-    tags: ["Career", "Education", "Web App"],
-    link: "#"
+    title: "AI Art Gallery",
+    description: "Interactive platform showcasing AI-generated artwork and LoRA models",
+    image: "https://images.unsplash.com/photo-1547891654-e66ed7ebb968?auto=format&fit=crop&q=80",
+    tags: ["AI", "Art", "Gallery"],
+    link: "/gallery"
   },
   {
     title: "Future Scenarios Generator",
     description: "Tool for creating and analyzing potential future technology scenarios",
     image: "https://images.unsplash.com/photo-1507146153580-69a1fe6d8aa1?auto=format&fit=crop&q=80",
     tags: ["Futures", "Analysis", "JavaScript"],
-    link: "#"
-  }
-];
-
-const projects = [
-  {
-    title: "AI Ethics Framework",
-    description: "Developed comprehensive guidelines for ethical AI implementation in enterprise systems",
-    image: "https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&q=80",
-    tags: ["AI", "Ethics", "Enterprise"],
-    link: "#"
-  },
-  {
-    title: "Women in STEM Initiative",
-    description: "Led a mentorship program connecting 100+ women with tech industry leaders",
-    image: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&q=80",
-    tags: ["STEM", "Education", "Leadership"],
-    link: "#"
-  },
-  {
-    title: "Future of Work Study",
-    description: "Research project analyzing AI's impact on workforce development through 2030",
-    image: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&q=80",
-    tags: ["Research", "AI", "Future"],
     link: "#"
   }
 ];
@@ -100,7 +77,7 @@ const studentProjects = {
   ]
 };
 
-function ProjectGrid({ items, title, id }) {
+function ProjectGrid({ items, title, id }: { items: any[]; title: string; id: string }) {
   return (
     <div id={id} className="container mx-auto px-6">
       <h2 className="text-3xl font-bold text-center mb-16">{title}</h2>
@@ -121,7 +98,7 @@ function ProjectGrid({ items, title, id }) {
             </div>
             <div className="p-6 bg-white">
               <div className="flex flex-wrap gap-2 mb-4">
-                {item.tags.map((tag, tagIndex) => (
+                {item.tags.map((tag: string, tagIndex: number) => (
                   <span
                     key={tagIndex}
                     className="px-3 py-1 text-sm bg-primary-100 text-black rounded-full"
@@ -130,12 +107,21 @@ function ProjectGrid({ items, title, id }) {
                   </span>
                 ))}
               </div>
-              <a
-                href={item.link}
-                className="inline-flex items-center text-black hover:text-primary-600 transition-colors"
-              >
-                View Project <ExternalLink className="ml-2 w-4 h-4" />
-              </a>
+              {item.title === "AI Art Gallery" ? (
+                <Link
+                  to="/gallery"
+                  className="inline-flex items-center text-black hover:text-primary-600 transition-colors"
+                >
+                  View Gallery <ExternalLink className="ml-2 w-4 h-4" />
+                </Link>
+              ) : (
+                <a
+                  href={item.link}
+                  className="inline-flex items-center text-black hover:text-primary-600 transition-colors"
+                >
+                  View Project <ExternalLink className="ml-2 w-4 h-4" />
+                </a>
+              )}
             </div>
           </div>
         ))}
@@ -169,7 +155,7 @@ function StudentProjectsCarousel() {
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-        {studentProjects[activeCategory].map((project, index) => (
+        {studentProjects[activeCategory as keyof typeof studentProjects].map((project, index) => (
           <div
             key={index}
             className="group relative overflow-hidden rounded-xl shadow-lg hover:shadow-xl transition-shadow"
@@ -199,7 +185,6 @@ export default function Projects() {
       <div className="space-y-32">
         <ProjectGrid items={tools} title="Tools Developed" id="tools" />
         <StudentProjectsCarousel />
-        <ProjectGrid items={projects} title="Featured Projects" id="projects" />
       </div>
     </section>
   );
