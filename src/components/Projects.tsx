@@ -1,6 +1,7 @@
 import React from 'react';
 import { ExternalLink } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import BannerSlider from './BannerSlider';
 
 const tools = [
   {
@@ -183,6 +184,7 @@ export default function Projects() {
   return (
     <section id="projects" className="py-20 bg-white">
       <div className="space-y-32">
+        <BannerSlider />
         <ProjectGrid items={tools} title="Tools Developed" id="tools" />
         <StudentProjectsCarousel />
       </div>
