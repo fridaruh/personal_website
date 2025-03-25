@@ -3,6 +3,9 @@ import { Mail, MapPin, Phone } from 'lucide-react';
 import emailjs from '@emailjs/browser';
 import toast, { Toaster } from 'react-hot-toast';
 
+// Initialize EmailJS
+emailjs.init("JzEjcfRM5EuTieavu");
+
 export default function Contact() {
   const [isSubmitting, setIsSubmitting] = React.useState(false);
   const formRef = React.useRef<HTMLFormElement>(null);
@@ -14,14 +17,15 @@ export default function Contact() {
     try {
       setIsSubmitting(true);
       await emailjs.sendForm(
-        'service_xxxxxx', // Replace with your EmailJS service ID
-        'template_xxxxxx', // Replace with your EmailJS template ID
+        'service_te0hn4g',
+        'template_e1nc0im',
         formRef.current,
-        'public_key_xxxxxx' // Replace with your EmailJS public key
+        'JzEjcfRM5EuTieavu'
       );
       toast.success('Message sent successfully!');
       formRef.current.reset();
     } catch (error) {
+      console.error('Error sending email:', error);
       toast.error('Failed to send message. Please try again.');
     } finally {
       setIsSubmitting(false);
@@ -78,30 +82,30 @@ export default function Contact() {
             <form ref={formRef} onSubmit={handleSubmit} className="space-y-6">
               <div>
                 <label
-                  htmlFor="user_name"
+                  htmlFor="from_name"
                   className="block text-sm font-medium text-gray-700 mb-1"
                 >
                   Name
                 </label>
                 <input
                   type="text"
-                  id="user_name"
-                  name="user_name"
+                  id="from_name"
+                  name="from_name"
                   required
                   className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent"
                 />
               </div>
               <div>
                 <label
-                  htmlFor="user_email"
+                  htmlFor="reply_to"
                   className="block text-sm font-medium text-gray-700 mb-1"
                 >
                   Email
                 </label>
                 <input
                   type="email"
-                  id="user_email"
-                  name="user_email"
+                  id="reply_to"
+                  name="reply_to"
                   required
                   className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent"
                 />
