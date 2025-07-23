@@ -7,12 +7,8 @@ const banners = [
     link: "https://nas.io/ai-the-new-sexy-com/challenges/ai-skills"
   },
   {
-    image: "https://firebasestorage.googleapis.com/v0/b/galeryproject-8ff43.appspot.com/o/website%2Fbanner_chatgpt.png?alt=media&token=943b16d5-f5c5-4d47-a333-e122c65c7fc2",
-    link: "https://nas.io/ai-the-new-sexy-com/challenges/hacks-de-chatgpt"
-  },
-  {
-    image: "https://firebasestorage.googleapis.com/v0/b/galeryproject-8ff43.appspot.com/o/website%2Fbanner_zapier.png?alt=media&token=1bb189e7-301a-4a83-a9fe-57f1bf9ffe45",
-    link: "https://nas.io/ai-the-new-sexy-com/challenges/automatizacin-con-zapier"
+    image: "https://firebasestorage.googleapis.com/v0/b/galeryproject-8ff43.appspot.com/o/website%2FBase_challlenge.png?alt=media&token=f5bca7a4-1aa4-4858-9597-1f0c3db16e1b",
+    link: "https://nas.io/ai-the-new-sexy-com/challenges/build-in-public-on-base"
   }
 ];
 
