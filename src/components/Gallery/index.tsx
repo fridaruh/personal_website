@@ -20,6 +20,18 @@ export default function Gallery() {
   const [selectedImage, setSelectedImage] = useState<ImageData | null>(null);
 
   useEffect(() => {
+    const script = document.createElement('script');
+    script.src = 'https://widget.senja.io/widget/25658a93-1f90-4e47-8a21-62c06b2490e8/platform.js';
+    script.type = 'text/javascript';
+    script.async = true;
+    document.body.appendChild(script);
+
+    return () => {
+      document.body.removeChild(script);
+    };
+  }, []);
+
+  useEffect(() => {
     fetchImages();
   }, []);
 
@@ -78,6 +90,12 @@ export default function Gallery() {
 
   return (
     <div className="min-h-screen pt-16">
+      <section className="py-8 bg-white">
+        <div className="container mx-auto px-6">
+          <div className="senja-embed" data-id="25658a93-1f90-4e47-8a21-62c06b2490e8" data-mode="shadow" data-lazyload="false" style={{ display: 'block', width: '100%' }}></div>
+        </div>
+      </section>
+
       <header className="bg-white shadow-sm py-8">
         <div className="container mx-auto px-6">
           <h1 className="text-3xl font-bold">📸 AI Skills Advanced LoRA's</h1>
