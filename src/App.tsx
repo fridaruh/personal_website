@@ -31,7 +31,7 @@ function SenjaWidget() {
           <div className="w-full lg:w-72">
             <div className="senja-embed" data-id="25658a93-1f90-4e47-8a21-62c06b2490e8" data-mode="shadow" data-lazyload="false" style={{ display: 'block', width: '100%' }}></div>
           </div>
-          <div className="flex-1 text-center">
+          <div className="flex-1 lg:justify-start">
             <h2 className="text-3xl font-bold text-gray-900">Challenges Activos</h2>
           </div>
         </div>
